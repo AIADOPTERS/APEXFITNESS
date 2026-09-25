@@ -1,0 +1,611 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Apex Fitness LDN Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&family=Oswald:wght@500;600&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --black:#000000; --ink:#0B0C0C; --panel:#141716; --line:#26302E;
+  --mint:#B6F3E8; --mint-deep:#8EDDD0; --yellow:#FBFF12; --white:#FFFFFF;
+  --text:#E9F2F0; --muted:#A4B4B0; --on-mint:#050505; --on-mint-muted:#2C3B38;
+  --display:'Michroma','Eurostile','Arial Black',sans-serif;
+  --body:'Jost','Futura','Century Gothic',system-ui,sans-serif;
+  --cond:'Oswald','Arial Narrow',sans-serif;
+  --gutter:clamp(16px,4vw,56px); --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee span{animation:none!important}}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.14em;line-height:1.25;margin:0;text-wrap:balance}
+h1{font-size:clamp(28px,5.2vw,58px);letter-spacing:.16em}
+h2{font-size:clamp(20px,3vw,34px)}
+h3{font-size:clamp(15px,1.6vw,18px);letter-spacing:.12em}
+p{margin:0}
+.eyebrow{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:14px;color:var(--yellow)}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--text);max-width:62ch}
+.muted{color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:18px}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.grid{display:grid;gap:24px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+section.band{padding-block:clamp(56px,8vw,104px)}
+.mint{background:var(--mint);color:var(--on-mint)}
+.mint .muted{color:var(--on-mint-muted)}
+.mint .eyebrow{color:var(--on-mint)}
+.ink{background:var(--ink)}
+
+/* top banner + nav, echoing the live site */
+.banner{background:var(--black);overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line)}
+.marquee{display:flex;width:max-content}
+.marquee span{font-family:var(--cond);font-weight:600;color:var(--yellow);font-size:18px;padding:8px 28px;letter-spacing:.02em;animation:scroll 32s linear infinite}
+.marquee a{color:var(--yellow)}
+@keyframes scroll{to{transform:translateX(-100%)}}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--black);padding-block:10px}
+.navwrap{position:relative;max-width:1340px}
+.navbar{display:flex;align-items:center;justify-content:center;background:var(--mint);color:var(--on-mint);border-radius:999px;padding:6px 22px;min-height:54px}
+.brand{font-family:var(--display);letter-spacing:.22em;font-size:14px;text-decoration:none;white-space:nowrap}
+.navbar .brand{display:none}
+.navlinks{display:flex;flex-wrap:wrap;justify-content:center;gap:2px clamp(12px,2.2vw,30px);font-family:var(--display);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.navlinks a,.dd>button{text-decoration:none;padding:12px 2px;border:0;border-bottom:2px solid transparent;background:none;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.navlinks a[aria-current="page"],.dd.current>button{border-bottom-color:var(--on-mint)}
+.navlinks a:hover,.dd>button:hover{border-bottom-color:var(--on-mint-muted)}
+.dd{position:relative}
+.dd>button::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.ddm{display:none;position:absolute;left:50%;transform:translateX(-50%);top:100%;min-width:190px;background:var(--mint);border:2px solid #000;padding:8px 0;flex-direction:column;z-index:5}
+.ddm a{padding:10px 18px;border-bottom:0;white-space:nowrap}
+.ddm a:hover,.ddm a[aria-current="page"]{background:#000;color:var(--mint)}
+.dd:hover .ddm,.dd:focus-within .ddm,.dd.open .ddm{display:flex}
+.menu-btn{display:none;font-family:var(--display);font-size:11px;letter-spacing:.14em;background:var(--black);color:var(--mint);border:0;border-radius:999px;min-height:44px;padding:0 18px;cursor:pointer}
+@media (max-width:860px){
+  .navbar{justify-content:space-between;padding:6px 6px 6px 20px}
+  .navbar .brand{display:inline}
+  .navlinks{display:none}
+  .menu-btn{display:inline-flex;align-items:center}
+  .navlinks.open{display:flex;position:absolute;left:var(--gutter);right:var(--gutter);top:calc(100% + 6px);flex-direction:column;align-items:stretch;background:var(--mint);border-radius:22px;padding:12px 22px;font-size:12px}
+  .dd>button{display:none}
+  .ddm{display:flex;position:static;transform:none;border:0;padding:0;min-width:0;background:none}
+  .ddm a{padding:12px 2px}
+}
+@media (max-width:520px){.brand{font-size:12px;letter-spacing:.16em}}
+/* buttons */
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;font-family:var(--cond);font-weight:600;font-size:17px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;background:var(--yellow);color:#000;box-shadow:4px 4px 0 var(--mint)}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--mint)}
+.btn.sm{min-height:44px;padding:0 18px;font-size:15px;box-shadow:none;background:var(--black);color:var(--yellow)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor;box-shadow:none}
+.mint .btn{box-shadow:4px 4px 0 var(--black)}
+.mint .btn.ghost{box-shadow:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.mint a:focus-visible,.mint button:focus-visible,.navbar a:focus-visible{outline-color:#000}
+
+/* photo placeholders: mint-framed like the live site's tiles */
+.photo{position:relative;background:repeating-linear-gradient(135deg,#171C1B 0 14px,#121615 14px 28px);border:3px solid var(--mint);min-height:220px;display:flex;align-items:flex-end;padding:14px}
+.photo span{font-family:var(--cond);font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--black);color:var(--mint);padding:4px 10px;max-width:100%}
+.mint .photo{border-color:var(--black)}
+
+/* cards */
+.card{background:var(--panel);border:1px solid var(--line);padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:12px}
+.mint .card{background:#CDF7EF;border-color:#98D9CD}
+.card .more{margin-top:auto;font-family:var(--cond);font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--yellow)}
+.mint .card .more{color:#000}
+.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ticks li{padding-left:26px;position:relative}
+.ticks li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;background:var(--mint);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.mint .ticks li::before{background:#000}
+
+/* review-mode tags */
+.tbc{display:inline-block;font-family:var(--cond);font-size:13px;letter-spacing:.04em;background:var(--yellow);color:#000;padding:2px 9px;line-height:1.5}
+body.clean .tbc{display:none}
+.review-toggle{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font-family:var(--cond);font-size:14px;letter-spacing:.06em;text-transform:uppercase;background:var(--yellow);color:#000;border:2px solid #000;border-radius:999px;min-height:44px;padding:0 18px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(56px,9vw,120px);background:radial-gradient(120% 90% at 70% 10%,#1B2624 0,#050606 60%)}
+.hero h1 .tag{display:block;margin-top:18px}
+.tagline{display:inline-block;background:var(--black);color:var(--yellow);font-family:var(--display);font-size:clamp(11px,1.4vw,15px);letter-spacing:.3em;padding:14px 20px;text-transform:uppercase}
+.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:end}
+
+/* stat line */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:22px 18px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--mint)}
+
+/* classes */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:15px;min-height:44px;padding:0 20px;border-radius:999px;border:2px solid var(--mint);background:transparent;color:var(--mint);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--mint);color:#000}
+.class{border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column}
+.class .band{height:8px}
+.class[data-path="hyrox"] .band{background:var(--yellow)}
+.class[data-path="elevate"] .band{background:var(--mint)}
+.class .in{padding:26px;display:flex;flex-direction:column;gap:12px}
+.class .top{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.pill{font-family:var(--cond);font-size:13px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--muted);color:var(--muted);padding:2px 10px;border-radius:999px}
+.class[data-path="hyrox"] .path{color:var(--yellow)}
+.class[data-path="elevate"] .path{color:var(--mint)}
+dl.spec{margin:6px 0 0;display:grid;grid-template-columns:88px 1fr;gap:0}
+dl.spec dt,dl.spec dd{margin:0;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+dl.spec dt{font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.week div{border:2px solid #000;padding:20px;display:flex;flex-direction:column;gap:6px;background:#CDF7EF}
+.week b{font-family:var(--display);font-weight:400;font-size:34px}
+.week .plus{border-style:dashed;background:transparent}
+
+/* featured offer */
+.offer{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:0;border:3px solid #000}
+.offer .main{background:#000;color:var(--text);padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:16px}
+.offer .main .price{color:var(--yellow);font-size:clamp(44px,6vw,64px)}
+.offer .side{background:#CDF7EF;color:#000;padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;gap:12px;justify-content:center}
+.offer .side .eyebrow{color:#000}
+.badge{align-self:start;font-family:var(--cond);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:14px;background:var(--yellow);color:#000;padding:4px 12px}
+.offer .main .ticks li::before{background:var(--mint)}
+@media (max-width:760px){.offer{grid-template-columns:1fr}}
+/* pricing */
+.price{font-family:var(--display);font-size:40px;letter-spacing:.04em;line-height:1}
+.plan.feature{border:2px solid var(--yellow)}
+.quote{font-size:clamp(18px,2vw,22px);line-height:1.5}
+
+/* stations */
+.stations{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:10px}
+.stations li{list-style:none;counter-increment:s;border:1px solid var(--line);padding:16px;background:var(--panel)}
+.stations li::before{content:"1km run + " counter(s);display:block;font-family:var(--cond);font-size:13px;letter-spacing:.08em;color:var(--yellow);text-transform:uppercase}
+.stations{padding:0;margin:0}
+
+/* faq */
+details{border-top:1px solid var(--line);padding-block:6px}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding-block:14px;font-weight:600;font-size:18px}
+summary::after{content:"+";font-family:var(--display);color:var(--mint)}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:16px;color:var(--muted);max-width:70ch}
+
+/* forms */
+label{display:flex;flex-direction:column;gap:6px;font-family:var(--cond);letter-spacing:.06em;text-transform:uppercase;font-size:14px}
+input,textarea{font:inherit;font-family:var(--body);text-transform:none;letter-spacing:0;font-size:16px;background:#fff;color:#000;border:2px solid #000;padding:12px 14px;min-height:48px}
+
+/* footer */
+footer{background:var(--black);border-top:3px solid var(--mint);padding-block:56px 32px;font-size:15px}
+footer h4{font-family:var(--display);font-weight:400;font-size:11px;letter-spacing:.16em;color:var(--mint);margin:0 0 10px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--yellow)}
+.fine{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:var(--muted);font-size:13px}
+
+.page[hidden]{display:none!important}
+.dog{display:grid;grid-template-columns:minmax(0,220px) 1fr;gap:28px;align-items:center}
+@media (max-width:640px){.dog{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+
+<div class="banner" aria-label="Upcoming event">
+  <div class="marquee" aria-hidden="false">
+    <span>Apex Ultra Trials · Saturday 3 October · 7am to 7pm · <a href="https://apexfitnessldn.eventrac.co.uk/e/apex-ultra-trials-15904">Register now</a></span>
+    <span aria-hidden="true">Apex Ultra Trials · Saturday 3 October · 7am to 7pm · Register now</span>
+    <span aria-hidden="true">Apex Ultra Trials · Saturday 3 October · 7am to 7pm · Register now</span>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap navwrap">
+    <nav class="navbar" aria-label="Main">
+      <a class="brand" href="#home">APEX FITNESS LDN</a>
+      <div class="navlinks" id="navlinks">
+        <a href="#home">Home</a>
+        <div class="dd" data-group="about"><button type="button" aria-expanded="false">About us</button>
+          <div class="ddm"><a href="#coaches">Coaches</a><a href="#space">Our space</a></div></div>
+        <a href="#start">Start here</a>
+        <div class="dd" data-group="training"><button type="button" aria-expanded="false">Training</button>
+          <div class="ddm"><a href="#hyrox">HYROX</a><a href="#elevate">ELEVATE</a></div></div>
+        <a href="#timetable">Timetable</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#events">Events</a>
+        <div class="dd" data-group="contact"><button type="button" aria-expanded="false">Contact</button>
+          <div class="ddm"><a href="#contact">Contact us</a><a href="#faqs">FAQs</a></div></div>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<div class="page" id="p-home">
+  <section class="hero">
+    <div class="wrap stack" style="gap:36px">
+      <div class="hero-grid">
+        <div class="stack" style="gap:26px">
+          <p class="eyebrow">Strength &amp; HYROX coaching · Earlsfield, SW18</p>
+          <h1>Apex Fitness LDN</h1>
+          <p><span class="tagline">Train hard. Train smart.<br>Get stronger together.</span></p>
+          <p class="lead">A coaching-led gym where every session is coached, every level is welcome, and we know our members by name.</p>
+          <div class="row"><a class="btn" href="https://www.wodboard.com/locations/500/signup/1df7d383f6?purchasable=Plan-11498">Start your 21-Day Taster</a><a class="btn ghost" href="#start">New here? Start here</a></div>
+        </div>
+        <div class="photo" style="min-height:420px"><span>Hero: coached class footage (current homepage video)</span></div>
+      </div>
+      <div class="facts">
+        <div><b>Official HYROX Training Club</b><span class="muted">Full race simulations on site</span></div>
+        <div><b>Open 7 days</b><span class="muted">5am to 9pm, open gym by fob</span></div>
+        <div><b>Two pathways</b><span class="muted">HYROX and ELEVATE strength</span></div>
+        <div><b>21-Day Taster</b><span class="muted">Unlimited classes for £65</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band mint">
+    <div class="wrap stack" style="gap:36px">
+      <div class="stack"><p class="eyebrow">Find your starting point</p><h2>Where would you like to start?</h2></div>
+      <div class="grid g3">
+        <div class="card"><div class="photo" style="min-height:200px"><span>Photo: coach demonstrating to a member</span></div><p class="eyebrow">New to training</p><h3>Build your base</h3><p>Start with ELEVATE, our strength and conditioning pathway, and build real strength at your own pace.</p><a class="more" href="#elevate">The ELEVATE pathway →</a></div>
+        <div class="card"><div class="photo" style="min-height:200px"><span>Photo: HYROX session</span></div><p class="eyebrow">Training for HYROX</p><h3>Race ready</h3><p>Structured 12-week blocks, weekly simulations and race-specific coaching, for first-timers and PB chasers alike.</p><a class="more" href="#hyrox">The HYROX pathway →</a></div>
+        <div class="card"><div class="photo" style="min-height:200px"><span>Photo: members talking between sets</span></div><p class="eyebrow">Never been before?</p><h3>Start here</h3><p>What to expect, which classes to try first, and how the free class and 21-Day Taster work.</p><a class="more" href="#start">Start here →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap grid g2" style="align-items:start;gap:48px">
+      <div class="stack"><p class="eyebrow">More than a class</p><h2>What your membership includes</h2><p class="muted">Everything below comes with a Train or Elite membership. Open gym is not included in Core or session packs.</p></div>
+      <div class="grid g2" style="gap:20px">
+        <ul class="ticks"><li>Coached classes across the HYROX and ELEVATE pathways</li><li>App tracking for workouts, PBs and progress</li><li>Open gym by personal fob, 5am to 9pm</li><li>Early-bird access to HYROX UK tickets</li></ul>
+        <ul class="ticks"><li>Recovery zone: ice bath, compression boots, massage tools</li><li>On-site Sports Naturopath</li><li>DJ sessions and regular socials</li><li>Showers and changing facilities</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band ink">
+    <div class="wrap stack" style="gap:36px">
+      <div class="row" style="justify-content:space-between;align-items:end"><div class="stack"><p class="eyebrow">Your coaches</p><h2>Meet Mike &amp; Ali</h2></div><a class="btn ghost" href="#coaches">Meet the team</a></div>
+      <div class="grid g2">
+        <div class="card"><div class="photo" style="min-height:320px"><span>Photo: Mike with kettlebell</span></div><h3>Mike · Owner &amp; Coach</h3><p class="muted">Level 4 Strength &amp; Conditioning Coach with a PhD in Exercise Psychology. His research looks at what keeps people exercising: enjoyment, belonging and social support.</p></div>
+        <div class="card"><div class="photo" style="min-height:320px"><span>Photo: Ali training</span></div><h3>Ali · Owner, Naturopath &amp; Coach</h3><p class="muted">Sports Naturopath Nutritionist and Strength &amp; Conditioning Coach who has competed at Turf Games and HYROX. Her approach: work with the body, and it will reward you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap stack" style="gap:30px">
+      <p class="eyebrow">In our members' words</p>
+      <div class="grid g3">
+        <figure class="card" style="margin:0"><blockquote class="quote" style="margin:0">"Couldn't recommend highly enough if you want a challenging and rewarding experience with a great community."</blockquote><figcaption class="muted">Sam S</figcaption></figure>
+        <figure class="card" style="margin:0"><blockquote class="quote" style="margin:0">"I'm quite new to London, I've tried out a lot of gyms. Apex is by far the best place I've trained."</blockquote><figcaption class="muted">Chris T</figcaption></figure>
+        <figure class="card" style="margin:0"><blockquote class="quote" style="margin:0">"A great place for all athletes! High performing but friendly and inclusive."</blockquote><figcaption class="muted">Sophie R</figcaption></figure>
+      </div>
+      <div class="grid g4" style="gap:12px">
+        <div class="photo" style="min-height:260px"><span>Community photo</span></div>
+        <div class="photo" style="min-height:260px"><span>Race day photo</span></div>
+        <div class="photo" style="min-height:260px"><span>Social event photo</span></div>
+        <div class="photo" style="min-height:260px"><span>Members after a session</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band mint">
+    <div class="wrap row" style="justify-content:space-between;gap:32px">
+      <div class="stack" style="max-width:640px"><p class="eyebrow">21-Day Taster · £65</p><h2>Three weeks of unlimited classes</h2><p>The best way to see if Apex is right for you: train as often as you like for 21 days, across both pathways. No contract, no pressure. Want just one class first? Your first class is on us.</p></div>
+      <div class="row"><a class="btn" href="https://www.wodboard.com/locations/500/signup/1df7d383f6?purchasable=Plan-11498">Start your 21-Day Taster</a><a class="btn ghost" href="https://www.wodboard.com/locations/500/forms/476/6639b95e636a0fe8/new">Book a free class</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ START HERE ============ -->
+<div class="page" id="p-start" hidden>
+  <section class="hero"><div class="wrap hero-grid">
+    <div class="stack" style="gap:24px"><p class="eyebrow">New to Apex</p><h1>Start here</h1><p class="lead">Thinking "I'm not fit enough yet"? This page is for you. Every class is coached, and you don't need any gym or HYROX experience to begin.</p></div>
+    <div class="photo" style="min-height:340px"><span>Photo: two members talking between exercises</span></div>
+  </div></section>
+  <section class="band mint"><div class="wrap stack" style="gap:32px">
+    <div class="stack"><p class="eyebrow">Two ways to start</p><h2>Choose how you'd like to try Apex</h2></div>
+    <div class="offer">
+      <div class="main"><span class="badge">Best way to start</span><h3 style="color:var(--mint)">21-Day Taster</h3><p class="price">£65</p>
+        <ul class="ticks"><li>Unlimited classes for 21 days</li><li>Try both pathways, HYROX and ELEVATE</li><li>No contract, no pressure. One per person</li></ul>
+        <a class="btn" style="align-self:start" href="https://www.wodboard.com/locations/500/signup/1df7d383f6?purchasable=Plan-11498">Start your 21-Day Taster</a></div>
+      <div class="side"><p class="eyebrow">Just want a look first?</p><h3>Free class</h3><p>Try one timetabled class on us. For South London locals; visiting from further away? Book a drop-in session.</p><span class="tbc" style="align-self:start">Drop-in price needed</span><a class="btn ghost" style="align-self:start" href="https://www.wodboard.com/locations/500/forms/476/6639b95e636a0fe8/new">Book a free class</a></div>
+    </div>
+    <div class="stack" style="gap:18px;margin-top:12px"><h2>Which classes to try first</h2>
+      <div class="grid g2">
+        <div class="card"><p class="eyebrow">New to training</p><h3>Start with ELEVATE</h3><p>Build your base strength first, then add more as you settle in.</p><a class="more" href="#elevate">The ELEVATE pathway →</a></div>
+        <div class="card"><p class="eyebrow">New to HYROX</p><h3>Strength first</h3><p>Start with HYROX Strength &amp; Conditioning before the more demanding classes.</p><a class="more" href="#guide">HYROX class guide →</a></div>
+      </div></div>
+  </div></section>
+  <section class="band"><div class="wrap stack" style="gap:24px;max-width:900px">
+    <h2>Before your first class</h2>
+    <div>
+      <details open><summary>Is Apex only for HYROX athletes?</summary><p>Not at all. Plenty of members don't race, they just enjoy the training. ELEVATE is our pathway for building strength and muscle.</p></details>
+      <details><summary>What should I bring, and when should I arrive?</summary><p><span class="tbc">Content needed from Mike and Ali</span></p></details>
+      <details><summary>What happens in my first session?</summary><p><span class="tbc">Short walkthrough needed, ideally in Mike or Ali's words</span></p></details>
+      <details><summary>Are there showers?</summary><p>Yes, we have showers and changing facilities.</p></details>
+      <details><summary>How do I get there?</summary><p>Unit 3, Glenville Mews, London SW18 4NJ. Under 15 minutes from Earlsfield, Southfields and Wandsworth stations, with a secure bike rack and plenty of parking.</p></details>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ HYROX ============ -->
+<div class="page" id="p-hyrox" hidden>
+  <section class="hero"><div class="wrap hero-grid">
+    <div class="stack" style="gap:24px"><p class="eyebrow">Official HYROX Training Club</p><h1>HYROX, coached properly</h1><p class="lead">First race or chasing a PB, the HYROX pathway gives you structured training built around the race itself.</p><div class="row"><a class="btn" href="https://www.wodboard.com/locations/500/forms/476/6639b95e636a0fe8/new">Book your free class</a><a class="btn ghost" href="#timetable">HYROX classes</a></div></div>
+    <div class="photo" style="min-height:380px"><span>HYROX Training Club logo + simulation photo</span></div>
+  </div></section>
+  <section class="band"><div class="wrap stack" style="gap:28px">
+    <div class="grid g2" style="gap:40px"><div class="stack"><p class="eyebrow">The race</p><h2>What is HYROX?</h2></div><p class="lead">A global fitness race: run 1km, complete one functional station, repeat eight times. Every event uses the same format, so results feed into international leaderboards and a World Championships each season.</p></div>
+    <ol class="stations"><li>SkiErg</li><li>Sled Push</li><li>Sled Pull</li><li>Burpee Broad Jumps</li><li>Rowing</li><li>Farmers Carry</li><li>Sandbag Lunges</li><li>Wall Balls</li></ol>
+  </div></section>
+  <section class="band mint"><div class="wrap grid g2" style="gap:48px;align-items:start">
+    <div class="stack"><p class="eyebrow">How we train for it</p><h2>The HYROX pathway</h2><p>Aerobic capacity plus the strength and skills for each station. Sessions are mostly whole-body, run in 12-week blocks, with a full race simulation at least once in every block.</p><div class="row"><a class="btn" href="#guide">HYROX class guide</a><a class="btn ghost" href="#week">Suggested PB week</a></div></div>
+    <div class="stack"><div class="card"><h3>How long do I need?</h3><p><b>2 to 3 months</b> if your goal is to enjoy the day and finish.</p><p><b>6+ months</b> of consistent training if you're chasing a PB.</p></div><div class="card"><h3>Race day, together</h3><p>Multiple Apex teams enter HYROX events, and members get early-bird access to HYROX UK tickets.</p><span class="tbc">Add named results (events, years) to replace general podium claims</span></div></div>
+  </div></section>
+</div>
+
+<!-- ============ ELEVATE ============ -->
+<div class="page" id="p-elevate" hidden>
+  <section class="hero"><div class="wrap hero-grid">
+    <div class="stack" style="gap:24px"><p class="eyebrow">ELEVATE pathway</p><h1>Strength, built properly</h1><p class="lead">ELEVATE is our strength and conditioning pathway. It's where we suggest beginners start, and a home for anyone who wants to get stronger, whether or not they ever race.</p><span class="tbc">Mike's new Programming text arriving next week</span></div>
+    <div class="photo" style="min-height:360px"><span>Photo: barbell back squat</span></div>
+  </div></section>
+  <section class="band"><div class="wrap stack" style="gap:32px">
+    <h2>How ELEVATE works</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Compound first</h3><p class="muted">Key compound lifts with accessory work, for a solid strength foundation.</p></div>
+      <div class="card"><h3>Conditioning built in</h3><p class="muted">Short and long bouts of capacity work to build fitness alongside strength.</p></div>
+      <div class="card"><h3>Load, managed</h3><p class="muted">Upper or lower body focus, with intensity and load managed across the week to avoid overtraining and reduce injury risk.</p></div>
+    </div>
+  </div></section>
+  <section class="band ink"><div class="wrap stack" style="gap:28px">
+    <div class="row" style="justify-content:space-between;align-items:end"><div class="stack"><p class="eyebrow">On the timetable</p><h2>ELEVATE classes</h2></div><a class="btn ghost" href="#guide">Full class guide</a></div>
+    <div class="grid g2">
+      <div class="card"><h3>Strength Performance</h3><p class="muted">Upper, Lower and Full Body sessions. Compound movements and accessory work to build strength, power and muscular endurance, with the option of a HYROX finisher.</p></div>
+      <div class="card"><h3>Bar Method &amp; Barbell Send</h3><p class="muted">The Olympic lifts broken down to improve technique and efficiency, always ending with a 10 to 15 minute workout using those lifts.</p></div>
+    </div>
+    <div class="card" style="flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px"><div class="stack" style="gap:6px"><p class="eyebrow">Want 1:1 coaching?</p><p>Chelsey specialises in strength training and Olympic weightlifting.</p></div><a class="btn ghost" href="#coaches">Personal training</a></div>
+  </div></section>
+  <section class="band mint"><div class="wrap row" style="justify-content:space-between;gap:32px">
+    <div class="stack" style="max-width:680px"><p class="eyebrow">Two pathways, one week</p><h2>Blend ELEVATE and HYROX</h2><p>Our pathways are built to be combined. Mix sessions through the week and we manage intensity and load so you feel your best.</p></div>
+    <div class="row"><a class="btn" href="#timetable">Class guide</a><a class="btn ghost" href="#hyrox">HYROX pathway</a></div>
+  </div></section>
+</div>
+
+<!-- ============ TIMETABLE ============ -->
+<div class="page" id="p-timetable" hidden>
+  <section class="hero" style="padding-block:clamp(48px,6vw,80px)"><div class="wrap stack" style="gap:22px">
+    <p class="eyebrow">Timetable &amp; classes</p><h1>Find your class</h1>
+    <p class="lead">Two coached pathways, HYROX and ELEVATE. Mix them through the week and we manage the load.</p>
+    <div class="row"><a class="btn" href="https://www.wodboard.com/locations/500/forms/476/6639b95e636a0fe8/new">Book your free class</a><a class="btn ghost" href="#guide">Class guide</a></div>
+  </div></section>
+  <section class="band" style="padding-top:0"><div class="wrap stack" style="gap:18px">
+    <div class="facts"><div><b>Open</b><span class="muted">Every day, 5am to 9pm</span></div><div><b>Open gym</b><span class="muted">Outside class times, by fob (Train &amp; Elite)</span></div><div><b>Booking</b><span class="muted">Book and track PBs in the Wodboard app</span></div></div>
+    <div class="photo" style="min-height:420px;align-items:center;justify-content:center"><span>Live Wodboard timetable (existing booking calendar)</span></div>
+  </div></section>
+  <section class="band mint"><div class="wrap stack" style="gap:28px">
+    <div class="stack"><p class="eyebrow">Where to begin</p><h2>Which class is right for me?</h2></div>
+    <div class="grid g3">
+      <div class="card"><p class="eyebrow">New to training</p><h3>Build your base</h3><p>Start with ELEVATE Strength Performance and build from there.</p></div>
+      <div class="card"><p class="eyebrow">New to HYROX</p><h3>Strength first</h3><p>Start with HYROX Strength &amp; Conditioning before trying Engine and the other demanding classes.</p><span class="tbc">Confirm which class this is</span></div>
+      <div class="card"><p class="eyebrow">Chasing a PB</p><h3>Build the full week</h3><p>Combine the pathway with a consistent running base. See the suggested week below.</p></div>
+    </div>
+  </div></section>
+  <section class="band" id="guide"><div class="wrap stack" style="gap:26px">
+    <div class="row" style="justify-content:space-between;align-items:end"><div class="stack"><p class="eyebrow">Class guide</p><h2>Every class, explained</h2></div>
+      <div class="chips" role="group" aria-label="Filter classes"><button class="chip" data-f="all" aria-pressed="true">All</button><button class="chip" data-f="hyrox" aria-pressed="false">HYROX</button><button class="chip" data-f="elevate" aria-pressed="false">ELEVATE</button></div></div>
+    <p class="muted"><span style="color:var(--yellow)">■</span> HYROX pathway &nbsp; <span style="color:var(--mint)">■</span> ELEVATE pathway &nbsp; <span class="tbc">Add class length to each card</span></p>
+    <div class="grid g2" id="classGrid">
+      <article class="class" data-path="hyrox"><div class="band"></div><div class="in"><div class="top"><span class="eyebrow path">HYROX</span><span class="pill">Toughest</span></div><h3>HYROX Engine</h3><p>Builds the physical resilience and lung capacity HYROX demands.</p><dl class="spec"><dt>Focus</dt><dd>Aerobic and anaerobic capacity, with a key focus on compromised running</dd><dt>Feel</dt><dd>One of the hardest classes of the week</dd></dl></div></article>
+      <article class="class" data-path="hyrox"><div class="band"></div><div class="in"><div class="top"><span class="eyebrow path">HYROX</span><span class="pill">Thursdays</span></div><h3>Thursday Throwdown</h3><p>A chipper: work through a list of movements in one continuous effort.</p><dl class="spec"><dt>Focus</dt><dd>Cardiovascular fitness, improving week on week</dd><dt>Format</dt><dd>One continuous effort through a sequence of exercises and reps</dd></dl></div></article>
+      <article class="class" data-path="hyrox"><div class="band"></div><div class="in"><div class="top"><span class="eyebrow path">HYROX</span><span class="pill">Longer session</span></div><h3>HYROX Simulation</h3><p>Race preparation, one part of the race at a time.</p><dl class="spec"><dt>Focus</dt><dd>A different element of the race each week</dd><dt>Race sim</dt><dd>A full simulation at least once every 12-week block</dd></dl></div></article>
+      <article class="class" data-path="hyrox"><div class="band"></div><div class="in"><div class="top"><span class="eyebrow path">HYROX add-on</span><span class="pill">Optional</span></div><h3>HYROX Finisher</h3><p>An optional finisher at the end of each Strength Performance class.</p><dl class="spec"><dt>Focus</dt><dd>Efficiency on the functional movements in HYROX</dd><dt>Format</dt><dd>Stations and erg work</dd></dl></div></article>
+      <article class="class" data-path="elevate"><div class="band"></div><div class="in"><div class="top"><span class="eyebrow path">ELEVATE</span><span class="pill">Good first class</span></div><h3>Strength Performance</h3><p>Upper, Lower and Full Body sessions built on compound lifts.</p><dl class="spec"><dt>Focus</dt><dd>Strength, power and muscular endurance</dd><dt>Format</dt><dd>Compound movements plus accessory exercises</dd></dl></div></article>
+      <article class="class" data-path="elevate"><div class="band"></div><div class="in"><div class="top"><span class="eyebrow path">ELEVATE</span><span class="pill">Technique</span></div><h3>Bar Method &amp; Barbell Send</h3><p>The Olympic lifts, broken down and coached.</p><dl class="spec"><dt>Focus</dt><dd>Technique and efficiency on the Olympic lifts</dd><dt>Format</dt><dd>Skill work, ending with a 10 to 15 minute workout</dd></dl></div></article>
+    </div>
+    <p><span class="tbc">To add once confirmed: ELEVATE, HYROX Strength &amp; Conditioning, Compromised Running, Hybrid Method</span></p>
+  </div></section>
+  <section class="band mint" id="week"><div class="wrap stack" style="gap:26px">
+    <div class="stack"><p class="eyebrow">Chasing a HYROX PB?</p><h2>A suggested training week</h2><p>Swap sessions week to week. This is your foundation.</p></div>
+    <div class="week">
+      <div><b>2×</b><span>HYROX Strength &amp; Conditioning</span></div>
+      <div><b>1×</b><span>HYROX Simulation</span></div>
+      <div><b>1×</b><span>Engine or Chipper</span></div>
+      <div><b>1×</b><span>Compromised Running or Hybrid Method</span></div>
+      <div class="plus"><b>+</b><span>A consistent running base</span></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ COACHES ============ -->
+<div class="page" id="p-coaches" hidden>
+  <section class="hero" style="padding-block:clamp(48px,6vw,80px)"><div class="wrap stack" style="gap:22px;max-width:900px"><p class="eyebrow">Our team</p><h1>The people who'll coach you</h1><p class="lead">We celebrate milestones, big and small, because progress is a shared win.</p></div></section>
+  <section class="band" style="padding-top:0"><div class="wrap grid g2" style="gap:48px;align-items:center">
+    <div class="photo" style="min-height:460px"><span>Photo: Mike (Levick Photography)</span></div>
+    <div class="stack"><p class="eyebrow">Owner &amp; Coach</p><h2>Mike</h2><p>Dr Mike Eynon is a Level 4 qualified Strength &amp; Conditioning Coach with a PhD in Exercise Psychology. He has published research on what helps people keep exercising.</p><p>That research shapes Apex: Mike focuses on enjoyment, a sense of belonging and social support, all key to staying consistent.</p><p class="muted"><b>Favourite exercise:</b> alternating dumbbell snatch.</p></div>
+  </div></section>
+  <section class="band ink"><div class="wrap grid g2" style="gap:48px;align-items:center">
+    <div class="stack"><p class="eyebrow">Owner, Naturopath &amp; Coach</p><h2>Ali</h2><p>Ali is a qualified Sports Naturopath Nutritionist and Strength &amp; Conditioning Coach, with competitive experience from a high-level sporting background, Turf Games and HYROX.</p><p>Her approach is simple: work with the body, and it will reward you. There are times to rest and times to push.</p><p class="muted"><b>Favourite exercise:</b> power cleans.</p></div>
+    <div class="photo" style="min-height:460px"><span>Photo: Ali (Levick Photography)</span></div>
+  </div></section>
+  <section class="band mint"><div class="wrap stack" style="gap:28px">
+    <div class="stack"><p class="eyebrow">1:1 coaching</p><h2>Personal training</h2><p>Our personal trainers set their own rates. Contact them directly.</p></div>
+    <div class="grid g2">
+      <div class="card"><div class="photo" style="min-height:260px"><span>Photo: Chelsey</span></div><h3>Chelsey</h3><p class="eyebrow">Strength · Olympic weightlifting</p><p>Makes training fun and accessible. Her philosophy: exercise should add to your life, not take away from it.</p><p>chalklifts@gmail.com</p></div>
+      <div class="card"><div class="photo" style="min-height:260px"><span>Photo: Ciaran</span></div><h3>Ciaran</h3><p class="eyebrow">Beginners · Weightlifting · Performance prep</p><p>Former Ireland rugby league representative who has also worked in the corporate world. Competed in strength sports, HYROX, CrossFit and triathlon.</p><p>coachciaran2025@gmail.com</p></div>
+    </div>
+  </div></section>
+  <section class="band"><div class="wrap dog">
+    <div class="photo" style="min-height:220px"><span>Photo: Winston</span></div>
+    <div class="stack"><p class="eyebrow">Gym dog</p><h2>Winston</h2><p class="muted">Strong background in chasing squirrels (still hasn't caught one). Qualified in post-workout cuddles, especially during cool-down stretches. Bring treats.</p></div>
+  </div></section>
+</div>
+
+<!-- ============ OUR SPACE ============ -->
+<div class="page" id="p-space" hidden>
+  <section class="hero" style="padding-block:clamp(48px,6vw,80px)"><div class="wrap stack" style="gap:22px;max-width:900px"><p class="eyebrow">Our space</p><h1>The gym</h1><p class="lead">Everything you need to train for strength and HYROX, and the space to recover properly.</p><span class="tbc">Waiting on Mike's new photos and equipment list</span></div></section>
+  <section class="band" style="padding-top:0"><div class="wrap grid g3" style="gap:12px">
+    <div class="photo" style="min-height:460px;grid-row:span 2"><span>New photo: main training floor</span></div>
+    <div class="photo"><span>New photo: rig and barbells</span></div>
+    <div class="photo"><span>New photo: sleds and turf</span></div>
+    <div class="photo"><span>New photo: ergs</span></div>
+    <div class="photo"><span>New photo: recovery zone</span></div>
+  </div></section>
+  <section class="band mint"><div class="wrap stack" style="gap:28px">
+    <h2>What you'll find here</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Open gym</h3><p>Train outside class times, 5am to 9pm, with your personal fob. Train and Elite members.</p></div>
+      <div class="card"><h3>Race ready</h3><p>Fully equipped to run full HYROX simulations and HYROX classes on site.</p></div>
+      <div class="card"><h3>Showers &amp; changing</h3><p>Showers and changing facilities, so you can train before work.</p></div>
+      <div class="card"><h3>Getting here</h3><p>Secure bike rack, and plenty of parking if you're travelling from further away.</p></div>
+      <div class="card"><h3>Sports Naturopath</h3><p>On-site nutrition and health guidance.</p></div>
+      <div class="card"><h3>Equipment</h3><p><span class="tbc">Equipment list from Mike</span></p></div>
+    </div>
+  </div></section>
+  <section class="band"><div class="wrap stack" style="gap:28px">
+    <div class="stack"><p class="eyebrow">Recovery station</p><h2>Recover as well as you train</h2></div>
+    <div class="grid g3">
+      <div class="card"><div class="photo"><span>Photo: ice bath</span></div><h3>Ice bath</h3><p class="muted">Cold water immersion, used by many athletes to help with recovery and muscle soreness.</p></div>
+      <div class="card"><div class="photo"><span>Photo: compression boots</span></div><h3>Compression boots</h3><p class="muted">Designed to support blood flow and help your legs recover between sessions.</p></div>
+      <div class="card"><div class="photo"><span>Photo: massage guns</span></div><h3>Massage guns</h3><p class="muted">Quick, targeted muscle treatment before or after training.</p></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ PRICING ============ -->
+<div class="page" id="p-pricing" hidden>
+  <section class="hero" style="padding-block:clamp(48px,6vw,80px)"><div class="wrap stack" style="gap:22px;max-width:900px"><p class="eyebrow">Pricing</p><h1>Memberships</h1><p class="lead">Start with a free class, then choose the option that fits your week.</p></div></section>
+  <section class="band mint"><div class="wrap stack" style="gap:26px">
+    <h2>Try us first</h2>
+    <div class="offer">
+      <div class="main"><span class="badge">Best way to start</span><h3 style="color:var(--mint)">21-Day Taster</h3><p class="price">£65</p>
+        <ul class="ticks"><li>Unlimited classes for 21 days</li><li>Try both pathways, HYROX and ELEVATE</li><li>No contract, no pressure. One per person</li></ul>
+        <a class="btn" style="align-self:start" href="https://www.wodboard.com/locations/500/signup/1df7d383f6?purchasable=Plan-11498">Start your 21-Day Taster</a></div>
+      <div class="side"><p class="eyebrow">Just want a look first?</p><h3>Free class</h3><p>Try one timetabled class on us. For South London locals; visiting from further away? Book a drop-in session.</p><span class="tbc" style="align-self:start">Drop-in price needed</span><a class="btn ghost" style="align-self:start" href="https://www.wodboard.com/locations/500/forms/476/6639b95e636a0fe8/new">Book a free class</a></div>
+    </div>
+  </div></section>
+  <section class="band"><div class="wrap stack" style="gap:26px">
+    <div class="row" style="justify-content:space-between"><h2>Memberships</h2><span class="tbc">Confirm billing period, "most popular" and Elite inclusions</span></div>
+    <div class="grid g3">
+      <div class="card plan"><p class="eyebrow">Core</p><p class="price">£160</p><p class="muted">For a steady routine</p><ul class="ticks"><li>Up to 10 classes a calendar month</li><li>Unused classes don't roll over</li><li>Classes only, no open gym</li><li>HYROX UK ticket early access</li></ul><a class="btn ghost" href="https://www.wodboard.com/locations/500/signup/1df7d383f6">Choose Core</a></div>
+      <div class="card plan feature"><p class="eyebrow">Train</p><p class="price">£185</p><p class="muted">Unlimited classes and open gym</p><ul class="ticks"><li>Unlimited classes</li><li>Open gym via personal fob</li><li>HYROX UK ticket early access</li></ul><a class="btn" href="https://www.wodboard.com/locations/500/signup/1df7d383f6">Choose Train</a></div>
+      <div class="card plan"><p class="eyebrow">Elite</p><p class="price">£285</p><p class="muted">Everything in Train, plus nutrition support</p><ul class="ticks"><li>Nutrition assessment and plan</li><li>Unlimited classes</li><li>Open gym via personal fob</li><li>HYROX UK ticket early access</li></ul><span class="tbc">Individual programming benefit: confirm now Level Up is separate</span><a class="btn ghost" href="https://www.wodboard.com/locations/500/signup/1df7d383f6">Choose Elite</a></div>
+    </div>
+  </div></section>
+  <section class="band ink"><div class="wrap stack" style="gap:26px">
+    <h2>Session packs</h2>
+    <div class="grid g2">
+      <div class="card"><p class="eyebrow">10 sessions</p><p class="price">£210</p><p class="muted">Any timetabled class · two-month expiry · no open gym</p></div>
+      <div class="card"><p class="eyebrow">5 sessions</p><p class="price">£110</p><p class="muted">Any timetabled class · one-month expiry · no open gym</p></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ EVENTS ============ -->
+<div class="page" id="p-events" hidden>
+  <section class="hero" style="padding-block:clamp(48px,6vw,80px)"><div class="wrap stack" style="gap:22px;max-width:900px"><p class="eyebrow">Events &amp; community</p><h1>Train together. Race together.</h1></div></section>
+  <section class="band mint" style="padding-top:0;background:linear-gradient(var(--black) 0 48px,var(--mint) 48px)"><div class="wrap">
+    <div class="grid g2" style="gap:0;border:3px solid #000;background:var(--mint)">
+      <div class="photo" style="min-height:380px;border:0"><span>Event artwork: Apex Ultra Trials</span></div>
+      <div class="stack" style="padding:clamp(24px,4vw,44px);justify-content:center"><p class="eyebrow">Next event</p><h2>Apex Ultra Trials</h2><p style="font-family:var(--cond);font-size:22px;font-weight:600">Saturday 3 October · 7am to 7pm</p><span class="tbc" style="align-self:start">Add format, who it's for and entry price</span><a class="btn" style="align-self:start" href="https://apexfitnessldn.eventrac.co.uk/e/apex-ultra-trials-15904">Register</a></div>
+    </div>
+  </div></section>
+  <section class="band"><div class="wrap stack" style="gap:26px">
+    <h2>Throughout the year</h2>
+    <div class="grid g3">
+      <div class="card"><h3>HYROX race days</h3><p class="muted">Multiple Apex teams enter HYROX events, so race day is shared with the people you train with.</p></div>
+      <div class="card"><h3>Full HYROX race at Apex</h3><p class="muted">Race-day format with a Rox Zone, solo or doubles. Open to everyone, no membership needed.</p><span class="tbc">Next date</span></div>
+      <div class="card"><h3>DJ sessions &amp; socials</h3><p class="muted">Regular DJ sessions and social events for members.</p><span class="tbc">Upcoming dates</span></div>
+    </div>
+    <div class="grid g4" style="gap:12px"><div class="photo"><span>Past event</span></div><div class="photo"><span>Past event</span></div><div class="photo"><span>Past event</span></div><div class="photo"><span>Past event</span></div></div>
+  </div></section>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" id="p-contact" hidden>
+  <section class="hero"><div class="wrap grid g2" style="gap:48px;align-items:start">
+    <div class="stack" style="gap:24px"><p class="eyebrow">Contact</p><h1>Come and say hello</h1><p class="lead">Questions about classes, memberships or HYROX? We're happy to help.</p>
+      <div class="grid g2" style="gap:20px">
+        <div><p class="eyebrow">Visit</p><p>Unit 3, Glenville Mews<br>London SW18 4NJ</p></div>
+        <div><p class="eyebrow">Opening hours</p><p>Monday to Sunday<br>5am to 9pm</p></div>
+        <div><p class="eyebrow">Call</p><p>07506 012103</p></div>
+        <div><p class="eyebrow">Email</p><p>info@apexfitnessldn.com</p></div>
+      </div>
+      <p class="muted">Under 15 minutes from Earlsfield, Southfields and Wandsworth stations. Secure bike rack and plenty of parking.</p>
+    </div>
+    <form class="card mint" id="contactForm" style="background:var(--mint);color:#000;border:0">
+      <h3>Send us a message</h3>
+      <label for="f-name">Name<input id="f-name" type="text" autocomplete="name"></label>
+      <label for="f-email">Email<input id="f-email" type="email" autocomplete="email"></label>
+      <label for="f-msg">Message<textarea id="f-msg" rows="5"></textarea></label>
+      <button class="btn" type="submit" style="align-self:start;box-shadow:4px 4px 0 #000">Send message</button>
+      <p id="formNote" class="muted" hidden>Mockup only: messages aren't sent yet.</p>
+    </form>
+  </div></section>
+  <section class="band" id="faqs"><div class="wrap stack" style="gap:30px;max-width:960px">
+    <h2>FAQs</h2>
+    <div class="stack" style="gap:6px"><p class="eyebrow">Getting started</p>
+      <div><details><summary>Is Apex beginner friendly for HYROX?</summary><p>Absolutely. We recommend starting with HYROX Strength and Conditioning before trying the more challenging classes.</p></details>
+      <details><summary>What's the best class for someone starting out?</summary><p>If you're just starting your fitness journey, we recommend ELEVATE classes to build base strength, then going from there.</p></details>
+      <details><summary>Is the gym only for HYROX athletes?</summary><p>Not at all. Plenty of members don't race, they just enjoy the training. ELEVATE is our pathway for building strength and muscle.</p></details></div></div>
+    <div class="stack" style="gap:6px"><p class="eyebrow">HYROX</p>
+      <div><details><summary>I'm well trained and want to PB. What do you recommend?</summary><p>Build a consistent running base, then aim for 2 HYROX Strength and Conditioning, 1 Simulation, 1 Engine or Chipper, and 1 Compromised Running or Hybrid Method session a week.</p></details>
+      <details><summary>How long do I need to train for a HYROX?</summary><p>To enjoy the day and finish, 2 to 3 months may be enough. For a PB, plan on 6+ months of consistent training.</p></details>
+      <details><summary>How are your HYROX classes different from bootcamp or cardio classes?</summary><p>Every session is designed around the movements, pacing and structure of the race, and planned in phases by our PhD head coach.</p></details></div></div>
+    <div class="stack" style="gap:6px"><p class="eyebrow">Membership &amp; facilities</p>
+      <div><details><summary>Do you have open gym?</summary><p>Yes, 5am to 9pm outside class times, via personal fob, for Train and Elite members.</p></details>
+      <details><summary>Do you have showers?</summary><p>Yes, we have showers and changing facilities.</p></details></div></div>
+  </div></section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid g4">
+      <div class="stack" style="gap:10px"><span class="brand" style="color:var(--mint)">APEX FITNESS LDN</span><p class="muted">Coaching-led strength and HYROX training in Earlsfield. Official HYROX Training Club.</p></div>
+      <div><h4>VISIT</h4><p>Unit 3, Glenville Mews<br>London SW18 4NJ<br>Mon to Sun · 5am to 9pm</p></div>
+      <div><h4>CONTACT</h4><p>07506 012103<br>info@apexfitnessldn.com<br><a href="https://www.instagram.com/apexfitnessldn">Instagram</a></p></div>
+      <div><h4>EXPLORE</h4><p><a href="#space">Our space</a><br><a href="#coaches">Personal training</a><br><a href="#contact">FAQs</a><br><a href="#events">Events</a></p></div>
+    </div>
+    <div class="fine"><span>Website redesign mockup · September 2026</span><span><a href="https://www.apexfitnessldn.com/privacypolicy">Privacy policy</a> · <a href="https://www.apexfitnessldn.com/copy-of-terms-and-conditions">Terms &amp; conditions</a></span></div>
+  </div>
+</footer>
+
+<button class="review-toggle" id="reviewToggle" aria-pressed="true">Review notes: on</button>
+
+<script>
+(function(){
+  const pages=['home','start','hyrox','elevate','timetable','coaches','space','pricing','events','contact'];
+  const anchors={guide:'timetable',week:'timetable',faqs:'contact'};
+  function route(){
+    let h=(location.hash||'#home').slice(1);
+    let target=h, scrollTo=null;
+    if(anchors[h]){target=anchors[h];scrollTo=h;}
+    if(!pages.includes(target)){target='home';}
+    pages.forEach(p=>{document.getElementById('p-'+p).hidden=(p!==target);});
+    const cur='#'+(scrollTo||target);
+    document.querySelectorAll('.navlinks a').forEach(a=>{a.getAttribute('href')===cur?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current');});
+    document.querySelectorAll('.dd').forEach(d=>{d.classList.toggle('current',!!d.querySelector('a[aria-current]'));d.classList.remove('open');d.querySelector('button').setAttribute('aria-expanded','false');});
+    document.getElementById('navlinks').classList.remove('open');
+    document.getElementById('menuBtn').setAttribute('aria-expanded','false');
+    if(scrollTo){const el=document.getElementById(scrollTo); if(el) el.scrollIntoView();}
+    else window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',route); route();
+
+  document.querySelectorAll('.dd>button').forEach(btn=>btn.addEventListener('click',()=>{const d=btn.parentElement;const o=d.classList.toggle('open');btn.setAttribute('aria-expanded',String(o));document.querySelectorAll('.dd').forEach(x=>{if(x!==d){x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false');}});}));
+  document.addEventListener('click',e=>{if(!e.target.closest('.dd'))document.querySelectorAll('.dd.open').forEach(x=>{x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false');});});
+  const mb=document.getElementById('menuBtn');
+  mb.addEventListener('click',()=>{const nl=document.getElementById('navlinks');const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',String(o));});
+
+  document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+    const f=c.dataset.f;
+    document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',String(x===c)));
+    document.querySelectorAll('#classGrid .class').forEach(el=>{el.hidden=!(f==='all'||el.dataset.path===f);});
+  }));
+
+  const rt=document.getElementById('reviewToggle');
+  rt.addEventListener('click',()=>{const clean=document.body.classList.toggle('clean');rt.setAttribute('aria-pressed',String(!clean));rt.textContent='Review notes: '+(clean?'off':'on');});
+
+  document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('formNote').hidden=false;});
+})();
+</script>
+
+</body></html>
